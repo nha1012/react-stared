@@ -3,9 +3,7 @@ import Routes from "src/routes/routes"
 import ReactGA from "react-ga"
 function App() {
   useEffect(() => {
-    ReactGA.initialize("G-7M559PFT09", {
-      debug: true
-    })
+    ReactGA.initialize("UA-28382520-33")
     ReactGA.pageview(window.location.pathname + window.location.search)
   }, [])
   return <Routes />

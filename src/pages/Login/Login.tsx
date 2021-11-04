@@ -1,10 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { connect, ConnectedProps } from "react-redux"
 import { login } from "./Login.thunks"
 import { Title } from "./Login.styles"
 import { useHistory } from "react-router-dom"
 import { PATH } from "src/constants/paths"
-
+import ReactGA from "react-ga"
 const mapStateToProps = state => ({
   loading: state.loading
 })
@@ -23,6 +23,10 @@ const Login = (props: Props) => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const history = useHistory()
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
   const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value)
   }
