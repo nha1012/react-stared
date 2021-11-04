@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker"
 import { Provider } from "react-redux"
 import { store } from "./store/store"
 import ReactGA from "react-ga"
-ReactGA.initialize("G-P18EWNHLM9")
+ReactGA.initialize("G-7M559PFT09")
 
 ReactDOM.render(
   <React.StrictMode>
