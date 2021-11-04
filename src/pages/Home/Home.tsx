@@ -1,9 +1,11 @@
 import React from "react"
 import MainLayout from "src/layouts/MainLayout"
 import ReactGA from "react-ga"
+import { useLocation } from "react-router-dom"
 
-export default function Home(props) {
-  const pathname = props.match.path
+export default function Home() {
+  let location = useLocation()
+  const pathname = location.pathname
   let pageView
   if (pathname === "*") pageView = "/not-found"
   else pageView = pathname
