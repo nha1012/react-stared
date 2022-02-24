@@ -6,30 +6,10 @@ import home from "src/assets/images/home.svg"
 import list from "src/assets/images/list.svg"
 import { connect, ConnectedProps } from "react-redux"
 
-const mapStateToProps = state => ({
-  closeSideNav: state.app.closeSideNav
-})
-
-const mapDispatchToProps = {}
-
-const connector = connect(mapStateToProps, mapDispatchToProps)
-
-interface Props extends ConnectedProps<typeof connector> {}
-
-function SideNav(props: Props) {
-  const { closeSideNav } = props
+function SideNav() {
   return (
-    <Nav className={closeSideNav ? "close" : ""}>
-      <h1>
-        <Logo
-          href="https://xdevclass.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white"
-        >
-          X
-        </Logo>
-      </h1>
+    <Nav>
+      <h1>start</h1>
       <Menu className="list-unstyled mb-5">
         <li>
           <NavLink exact to={PATH.HOME}>
@@ -37,29 +17,12 @@ function SideNav(props: Props) {
             <span>Home</span>
           </NavLink>
         </li>
-        <li>
-          <NavLink to={PATH.PRODUCT}>
-            <img src={list} alt="" />
-            <span>Product</span>
-          </NavLink>
-        </li>
       </Menu>
       <Footer>
-        <p>
-          Copyright ©{new Date().getFullYear()} All rights reserved | This
-          template is made with by
-          <a
-            href="https://xdevclass.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-1 text-white"
-          >
-            XdevClass
-          </a>
-        </p>
+        <p>Copyright ©{new Date().getFullYear()}</p>
       </Footer>
     </Nav>
   )
 }
 
-export default connector(SideNav)
+export default SideNav
